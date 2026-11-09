@@ -7,6 +7,7 @@ import os, sys, shutil, json, html
 ROOT = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, ROOT)
 from refs_data import SITES, MULTI
+LOGO_SVG = open(os.path.join(ROOT, "img", "logo-anim.svg"), encoding="utf-8").read()
 IDF = json.load(open(os.path.join(ROOT, "data", "idf.json")))
 DIST = os.path.join(ROOT, "dist")
 DOMAIN = "https://www.bathelec.fr"
@@ -287,7 +288,7 @@ def shell(title, desc, body, path, depth=0, active="", extra_js=""):
 <div class="top"><div class="wrap"><span class="hide-m">Électricité · Courants faibles · Sûreté · IRVE — Île-de-France · Une société du Groupe SITTE</span>
 <div class="r"><a href="tel:{TEL_HREF}">{ic("phone")}{TEL}</a><a href="mailto:{MAIL}">{ic("mail")}{MAIL}</a><a href="{LINKEDIN}" target="_blank" rel="noopener" aria-label="LinkedIn">{ic("linkedin")}</a></div></div></div>
 <header class="h"><div class="wrap">
-<a class="brand" href="{r}index.html" aria-label="BATHELEC, accueil"><img src="{r}img/logo.svg" alt="BATHELEC — 100% disponible" width="186" height="46"></a>
+<a class="brand" href="{r}index.html" aria-label="BATHELEC, accueil">{LOGO_SVG}</a>
 <nav class="m">
 <div class="dd"><a href="{r}index.html#expertises"{on("exp")}>Expertises</a><div class="menu">{menu_exp}</div></div>
 <a href="{r}index.html#secteurs"{on("sect")}>Secteurs</a>
@@ -303,7 +304,7 @@ def shell(title, desc, body, path, depth=0, active="", extra_js=""):
 <main>{body}</main>
 <footer><div class="wrap">
 <div class="cols">
-<div><a class="brand" href="{r}index.html"><img src="{r}img/logo.svg" alt="BATHELEC" width="178" height="44"></a><p>Courants forts, courants faibles, sûreté et IRVE pour les bâtiments tertiaires, publics et privés d'Île-de-France. Spécialiste des marchés à bons de commande. Une société du Groupe SITTE.</p></div>
+<div><a class="brand" href="{r}index.html" aria-label="BATHELEC, accueil">{LOGO_SVG}</a><p>Courants forts, courants faibles, sûreté et IRVE pour les bâtiments tertiaires, publics et privés d'Île-de-France. Spécialiste des marchés à bons de commande. Une société du Groupe SITTE.</p></div>
 <div><h4>Expertises</h4><ul>{"".join(f'<li><a href="{r}expertises/{x["slug"]}.html">{x["title"]}</a></li>' for x in EXPERTISES)}</ul></div>
 <div><h4>Bathelec</h4><ul><li><a href="{r}references.html">Références</a></li><li><a href="{r}entreprise.html">L'entreprise</a></li><li><a href="{r}carrieres.html">Carrières</a></li><li><a href="{r}contact.html">Contact</a></li></ul></div>
 <div><h4>Contact</h4><ul><li>1-3 rue de la Procession<br>93210 Saint-Denis</li><li><a href="tel:{TEL_HREF}">{TEL}</a></li><li><a href="mailto:{MAIL}">{MAIL}</a></li></ul></div>
