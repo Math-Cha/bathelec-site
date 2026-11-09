@@ -13,8 +13,8 @@ DIST = os.path.join(ROOT, "dist")
 DOMAIN = "https://www.bathelec.fr"
 FORM_CONTACT = "https://formsubmit.co/contact@bathelec.fr"
 FORM_RH = "https://formsubmit.co/recrutement@bathelec.fr"
-TEL = "01 55 99 03 89"
-TEL_HREF = "+33155990389"
+TEL = "01 88 59 04 90"
+TEL_HREF = "+33188590490"
 MAIL = "contact@bathelec.fr"
 MAIL_RH = "recrutement@bathelec.fr"
 LINKEDIN = "https://fr.linkedin.com/company/bathelec"
@@ -266,7 +266,7 @@ def shell(title, desc, body, path, depth=0, active="", extra_js=""):
         return ' class="on"' if active == k else ""
     ld = {
         "@context": "https://schema.org", "@type": "Electrician", "name": "BATHELEC",
-        "url": DOMAIN, "telephone": "+33 1 55 99 03 89", "email": MAIL, "logo": DOMAIN + "/img/logo.png",
+        "url": DOMAIN, "telephone": "+33 1 88 59 04 90", "email": MAIL, "logo": DOMAIN + "/img/logo.png",
         "address": {"@type": "PostalAddress", "streetAddress": "1-3 rue de la Procession", "postalCode": "93210",
                     "addressLocality": "Saint-Denis", "addressCountry": "FR"},
         "areaServed": "Île-de-France", "parentOrganization": {"@type": "Organization", "name": "Groupe SITTE"},
